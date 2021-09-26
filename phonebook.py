@@ -12,6 +12,12 @@ class PhoneBook:
     
     def add_number(self, name, number):
         self.items[name].append(number)
+    
+    def get_name(self, name):
+        # gets the number based on the name
+        if name not in self.items:
+            return f"Not found"
+        return f"{name}: {self.items[name]}"
 
     def remove_name(self, name):
         self.items.pop(name)
@@ -42,5 +48,5 @@ if __name__ == '__main__':
     print(ph.is_empty())
     print(ph.size())
     print(ph.remove_name("Rakiki"))
-    print(ph.delete_all())
-    print(ph)
+   # print(ph.delete_all())
+    print(ph.get_name('Makiki'))
