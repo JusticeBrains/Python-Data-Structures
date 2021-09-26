@@ -20,7 +20,7 @@ class PhoneBook:
         return f"{name}: {self.items[name]}"
 
     def remove_name(self, name):
-        self.items.pop(name)
+        return f"{name} with phonenumber {self.items.pop(name)} has been deleted"
     
     def delete_all(self):
         self.items.clear()
