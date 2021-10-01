@@ -2,7 +2,7 @@ from collections import OrderedDict
 
 """
 OrderedDict from the collections module is a dictionary subclass
-that remembers insertion order of keys
+that remembers insertion order of all keys
 """
 people = OrderedDict(Accra="McLean", Kumasi="Akua",Tarkoradi="Makiki")
 
