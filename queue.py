@@ -17,18 +17,24 @@ class Queue:
         """
         Remove and print the first item
         """
+        if self.is_empty():
+            return f"Queue is empty"
         return self.items.popleft()
     
     def peek(self):
         """
         returns the first item in the queue
         """
+        if self.is_empty():
+            return f"Queue is empty"
         return self.items[0]
     
     def size(self):
         """
         returns the length of the queue
         """
+        if self.is_empty():
+            return f"Queue is empty"
         return len(self.items)
     
     def __str__(self):
@@ -41,6 +47,7 @@ if __name__ == '__main__':
     q = Queue()
     print(q)
     print(f"Is the Queue Empty: {q.is_empty()}")
+    print(q.peek())
     q.enqueue("Learning")
     q.enqueue("Queue")
     q.enqueue("Data")
