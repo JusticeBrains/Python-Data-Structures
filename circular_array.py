@@ -1,12 +1,12 @@
 from collections import deque
 
-class CircularArray:
+class CircularQueue:
     def __init__(self):
-        self.items = deque()
+        self.items = deque(maxlen=12)
 
     def is_empty(self):
         """
-        Check if the CircularArray is empty
+        Check if the CircularQueue is empty
         """
         return not self.items
     
@@ -14,12 +14,16 @@ class CircularArray:
         """
         Add an element to the begin(left) of the array
         """
+        if self.items[0] is not None:
+            return f"{self.items[0]} Index occupied" 
         self.items.appendleft(item)
 
     def add_last(self, item):
         """
         Add an element to the end(right) of the circular array
         """
+        if self.items[-1] is not None:
+            return f"{self.items[-1]} Index occupied"
         self.items.append(item)
     
     def remove_first(self):
@@ -65,11 +69,11 @@ class CircularArray:
     def __repr__(self):
         return self.items
     
-    def __str__(self):
-        return str(self.items)
+    def __str__(self) -> str:
+        return f"{self.items}"
 
 if __name__ == '__main__':
-    ca = CircularArray()
+    ca = CircularQueue()
     print(ca)
     print(ca.remove_first())
     print(ca.remove_last())
